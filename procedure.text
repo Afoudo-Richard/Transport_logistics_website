@@ -1,0 +1,4 @@
+##### Tailwind setup app
+
+1 - initialize npm in you folder (npm init -y)
+2 - install tailwind as a dev dependency (npm install -D tailwindcss)

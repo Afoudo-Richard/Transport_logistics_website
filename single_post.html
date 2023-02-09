@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/css/main.css" rel="stylesheet">
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="assets/images/airplane.png" type="image/png">
+
+    <!-- google font style (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Alphine js light weight js library -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Animate On Scroll -->
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <title>Hello world</title>
+</head>
+
+<body class="font-poppins">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0  inset-x-0 w-full z-[10000] p-6"
+        :class="{'bg-white -top-96  transition duration-300 transform translate-y-96 text-black shadow-lg': showBar}"
+        x-data="{ open: false, showBar: true  }" @scroll.window="showBar = (window.pageYOffset > 200) ? true : false">
+        <div class="container">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <h5 class="text-3xl text-white" :class="{'text-black' : showBar, 'text-white':!showBar}">Logo</h5>
+
+                <!-- Menu Items -->
+                <div class="hidden space-x-6 lg:flex text-white"
+                    :class="{'text-black' : showBar, 'text-white':!showBar}">
+                    <a href="/#home" class="nav-link hover:text-darkGrayishBlue">Home</a>
+                    <a href="/#about" class="nav-link hover:text-darkGrayishBlue">About Us</a>
+                    <a href="/#howItWorks" class="nav-link hover:text-darkGrayishBlue">How It Works</a>
+                    <a href="/#team" class="nav-link hover:text-darkGrayishBlue">Team</a>
+                    <a href="/#services" class="nav-link hover:text-darkGrayishBlue">Services</a>
+                    <a href="/#blog" class="nav-link hover:text-darkGrayishBlue">Blog</a>
+                    <a href="/#contact" class="nav-link hover:text-darkGrayishBlue">Contact</a>
+
+                </div>
+
+                <!-- Hamburger Icon -->
+                <span class="text-2xl block lg:hidden focus:outline-none text-white" @click="open = ! open"
+                    :class="{'text-black' : showBar, 'text-white':!showBar}">
+                    <i class="fa-solid fa-bars" x-show="!open"></i>
+                    <i class="fa-solid fa-xmark" x-show="open"></i>
+                </span>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="lg:hidden">
+                <div id="menu"
+                    class="absolute flex-col items-center self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
+                    :class="open ? 'flex' : 'hidden'">
+                    <a href="#">Pricing</a>
+                    <a href="#">Product</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Community</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- End of Navbar -->
+
+
+    <!-- Hero Section -->
+    <section style="background-image: url('assets/images/hero_bg_1.jpg.webp'); background-position: 50% -25px;"
+        class="h-[700px] lg:h-screen bg-cover bg-center relative mb-5 md:mb-12">
+
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+
+        <div class="container h-full flex flex-col justify-center items-center z-20 relative" data-aos="fade-up"
+            data-aos-delay="400">
+            <h1 class="uppercase text-3xl md:text-3xl lg:text-6xl font-bold text-white mb-3">Single Blog Post</h1>
+            <p class=" text-gray-200 mb-10 text-xl">February 23, 2023</p>
+
+        </div>
+
+    </section>
+    <!-- End of Hero section -->
+
+
+    <!-- ============== Single Blog section ================== -->
+
+    <section>
+        <div class="container p-6">
+            <div class="flex flex-col md:flex-row">
+
+                <div class="w-full md:w-8/12 p-4">
+                    <div class="text-sm md:text-lg font-light">
+                        <p class="mb-4">The Big Oxmox advised her not to do so, because there were thousands of bad
+                            Commas, wild
+                            Question
+                            Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven
+                            versalia,
+                            put her initial into the belt and made herself on the way.
+                        </p>
+                        <p class="mb-4">The Big Oxmox advised her not to do so, because there were thousands of bad
+                            Commas, wild
+                            Question
+                            Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven
+                            versalia,
+                            put her initial into the belt and made herself on the way.
+                        </p>
+                        <p class="mb-4">The Big Oxmox advised her not to do so, because there were thousands of bad
+                            Commas, wild
+                            Question
+                            Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven
+                            versalia,
+                            put her initial into the belt and made herself on the way.
+                        </p>
+                        <p class="mb-4">The Big Oxmox advised her not to do so, because there were thousands of bad
+                            Commas, wild
+                            Question
+                            Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven
+                            versalia,
+                            put her initial into the belt and made herself on the way.
+                        </p>
+                        <p class="mb-4">The Big Oxmox advised her not to do so, because there were thousands of bad
+                            Commas, wild
+                            Question
+                            Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven
+                            versalia,
+                            put her initial into the belt and made herself on the way.
+                        </p>
+                        <p class="mb-4">The Big Oxmox advised her not to do so, because there were thousands of bad
+                            Commas, wild
+                            Question
+                            Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven
+                            versalia,
+                            put her initial into the belt and made herself on the way.
+                        </p>
+                        <p class="mb-4">The Big Oxmox advised her not to do so, because there were thousands of bad
+                            Commas, wild
+                            Question
+                            Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven
+                            versalia,
+                            put her initial into the belt and made herself on the way.
+                        </p>
+                        <p class="mb-4">The Big Oxmox advised her not to do so, because there were thousands of bad
+                            Commas, wild
+                            Question
+                            Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven
+                            versalia,
+                            put her initial into the belt and made herself on the way.
+                        </p>
+
+                    </div>
+
+                    <!-- <div class="mt-10 md:mt-14">
+                        <div class="flex flex-wrap">
+                            <span>Categories:</span> <span class="text-red-500">Design</span>,<span
+                                class="text-red-500">Events</span>
+                            <span> Tags:</span> <span class="text-red-500">#Html</span>,<span
+                                class="text-red-500">Trends</span>
+                        </div>
+                    </div> -->
+
+                    <div class="mt-10 md:mt-20">
+                        <h4 class="text-lg font-bold mb-10 lg:text-3xl">6 Comments</h4>
+                        <!-- Comments -->
+                        <div class="w-full flex flex-col">
+                            <div class="flex space-x-6 mb-14">
+                                <div class="w-14 h-14 md:w-20 md:h-20 shrink-0 bg-red-500 rounded-full overflow-hidden">
+                                    <img src="./assets/images/person_1.jpg.webp" class="w-full" alt="">
+                                </div>
+
+                                <div class="flex flex-col space-y-1">
+                                    <h5 class="text-2xl font-medium">Jacob smith</h5>
+
+                                    <h6 class="text-xs md:text-sm text-gray-300 uppercase">January 9, At 2:21PM</h6>
+
+
+                                    <p class="mb-4 font-light text-sm ">Lorem ipsum dolor sit amet
+                                        consectetur adipisicing elit. Consequatur excepturi
+                                        sed
+                                        necessitatibus nesciunt minus illum molestiae odit explicabo ipsum nam.</p>
+
+                                    <div class="pt-5">
+                                        <a
+                                            class="bg-gray-300 px-4 py-2 text-white text-base uppercase inline-block">Reply</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex space-x-6 mb-14">
+                                <div class="w-14 h-14 md:w-20 md:h-20 shrink-0 bg-red-500 rounded-full overflow-hidden">
+                                    <img src="./assets/images/person_1.jpg.webp" class="w-full" alt="">
+                                </div>
+
+                                <div class="flex flex-col space-y-1">
+                                    <h5 class="text-2xl font-medium">Jacob smith</h5>
+
+                                    <h6 class="text-xs md:text-sm text-gray-300 uppercase">January 9, At 2:21PM</h6>
+
+
+                                    <p class="mb-4 font-light text-sm ">Lorem ipsum dolor sit amet
+                                        consectetur adipisicing elit. Consequatur excepturi
+                                        sed
+                                        necessitatibus nesciunt minus illum molestiae odit explicabo ipsum nam.</p>
+
+                                    <div class="pt-5">
+                                        <a
+                                            class="bg-gray-300 px-4 py-2 text-white text-base uppercase inline-block">Reply</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex space-x-6 mb-14 ml-10">
+                                <div class="w-14 h-14 md:w-20 md:h-20 shrink-0 bg-red-500 rounded-full overflow-hidden">
+                                    <img src="./assets/images/person_1.jpg.webp" class="w-full" alt="">
+                                </div>
+
+                                <div class="flex flex-col space-y-1">
+                                    <h5 class="text-2xl font-medium">Jacob smith</h5>
+
+                                    <h6 class="text-xs md:text-sm text-gray-300 uppercase">January 9, At 2:21PM</h6>
+
+
+                                    <p class="mb-4 font-light text-sm ">Lorem ipsum dolor sit amet
+                                        consectetur adipisicing elit. Consequatur excepturi
+                                        sed
+                                        necessitatibus nesciunt minus illum molestiae odit explicabo ipsum nam.</p>
+
+                                    <div class="pt-5">
+                                        <a
+                                            class="bg-gray-300 px-4 py-2 text-white text-base uppercase inline-block">Reply</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex space-x-6 mb-14 ml-20">
+                                <div class="w-14 h-14 md:w-20 md:h-20 shrink-0 bg-red-500 rounded-full overflow-hidden">
+                                    <img src="./assets/images/person_1.jpg.webp" class="w-full" alt="">
+                                </div>
+
+                                <div class="flex flex-col space-y-1">
+                                    <h5 class="text-2xl font-medium">Jacob smith</h5>
+
+                                    <h6 class="text-xs md:text-sm text-gray-300 uppercase">January 9, At 2:21PM</h6>
+
+
+                                    <p class="mb-4 font-light text-sm ">Lorem ipsum dolor sit amet
+                                        consectetur adipisicing elit. Consequatur excepturi
+                                        sed
+                                        necessitatibus nesciunt minus illum molestiae odit explicabo ipsum nam.</p>
+
+                                    <div class="pt-5">
+                                        <a
+                                            class="bg-gray-300 px-4 py-2 text-white text-base uppercase inline-block">Reply</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="mt-10 md:mt-20">
+                        <h4 class="text-lg font-bold mb-10 lg:text-3xl">Leave a comment</h4>
+
+                        <form>
+                            <div class="grid grid-cols-1 gap-y-4">
+                                <div class="flex flex-col">
+                                    <h6 class="mb-1">First Name</h6>
+                                    <input type="text" class="border border-gray-300 px-3 py-2 text-base">
+                                </div>
+
+                                <div class="flex flex-col">
+                                    <h6 class="mb-1">Last Name</h6>
+                                    <input type="text" class="border border-gray-300 px-3 py-2 text-base">
+                                </div>
+                                <div class="flex flex-col">
+                                    <h6 class="mb-1">Email</h6>
+                                    <input type="email" class="border border-gray-300 px-3 py-2 text-base">
+                                </div>
+                                <div class="flex flex-col">
+                                    <h6 class="mb-1">Subject</h6>
+                                    <input type="text" class="border border-gray-300 px-3 py-2 text-base">
+                                </div>
+
+                                <div class="flex flex-col">
+                                    <h6 class="mb-1">Message</h6>
+                                    <textarea name="" id="" cols="30" rows="5"
+                                        class="border border-gray-300 px-3 py-2 text-base"></textarea></textarea>
+                                </div>
+
+                                <div class="flex justify-center">
+                                    <button class="bg-red-500 px-8 py-3 text-white text-base uppercase">Send
+                                        Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-4/12 p-4">
+                    <div class="bg-gray-300 p-3 mb-14">
+                        <input type="text" class=" w-full block border border-gray-300 px-3 py-2 text-base"
+                            placeholder="Type a keyword">
+                    </div>
+
+                    <div class="mb-14">
+                        <h4 class="text-lg font-bold mb-4">Categories</h4>
+
+                        <div class="flex flex-col space-y-3">
+
+                            <div class="w-full pb-2 border-b border-dotted flex justify-between font-light">
+                                <span class="text-red-500">Creative</span>
+                                <span class="text-gray-300">(20)</span>
+                            </div>
+
+                            <div class="w-full pb-2 border-b border-dotted flex justify-between font-light">
+                                <span class="text-red-500">News</span>
+                                <span class="text-gray-300">(20)</span>
+                            </div>
+                            <div class="w-full pb-2 border-b border-dotted flex justify-between font-light">
+                                <span class="text-red-500">Design</span>
+                                <span class="text-gray-300">(20)</span>
+                            </div>
+                            <div class="w-full pb-2 border-b border-dotted flex justify-between font-light">
+                                <span class="text-red-500">Innovation</span>
+                                <span class="text-gray-300">(20)</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="mb-14">
+                        <div class="flex flex-col">
+                            <div
+                                class=" w-40 h-40 md:w-44 md:h-44 bg-red-500 border-2 border-white flex items-center justify-center text-white text-base rounded-full mb-3 md:mb-5 overflow-hidden">
+
+                                <img src="./assets/images/person_1.jpg.webp" alt="">
+
+                            </div>
+
+                            <h5 class="mb-3 text-lg">About the Author</h5>
+
+                            <p class="mb-4 font-light text-sm md:text-base ">Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. Consequatur excepturi
+                                sed
+                                necessitatibus nesciunt minus illum molestiae odit explicabo ipsum nam.</p>
+
+                            <div>
+                                <a class="bg-red-500 px-8 py-3 text-white text-base uppercase inline-block">Read
+                                    More</a>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="mb-3 text-lg">Paragraph</h5>
+
+                        <p class="mb-4 font-light text-sm md:text-base ">When she reached the first hills of the Italic
+                            Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the
+                            headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a
+                            rethoric question ran over her cheek, then she continued her way.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== End of Single Blog section ================== -->
+
+
+
+    <!-- Footer section -->
+    <footer class="py-10 md:py-20 bg-gray-500">
+        <div class="container p-6">
+            <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 pb-10 border-b border-gray-300">
+
+                <div class="w-full md:w-4/12 flex flex-col space-y-4">
+                    <h4 class="text-bold text-white text-lg">About</h4>
+                    <p class="text-gray-300 font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Provident suscipit id rerum possimus
+                        nostrum magnam eum animi. Alias aperiam perferendis possimus architecto similique! Voluptatibus,
+                        soluta. Accusamus vero totam, animi dolore nobis veniam nesciunt maiores optio et repellat,
+                        aliquam reiciendis iste.</p>
+                </div>
+
+                <div class="w-full md:w-8/12 flex flex-col md:flex-row space-y-4 md:space-y-0 justify-end">
+                    <div class="flex flex-col space-y-4 md:mr-16 lg:mr-32">
+                        <h4 class="text-bold text-white text-lg">Quick Links</h4>
+                        <div class="flex flex-col space-y-3">
+                            <a href="" class="text-gray-300 text-base hover:underline transition-all">About Us</a>
+                            <a href="" class="text-gray-300 text-base">Services</a>
+
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col space-y-5">
+                        <div class="flex flex-col space-y-4">
+                            <h4 class="text-bold text-white text-lg">Follow Us</h4>
+                            <div class="flex space-x-4 text-gray-300 text-lg">
+                                <a href="">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col space-y-4">
+                            <h4 class="text-bold text-white text-lg">Subscribe Newsletter</h4>
+                            <div class="flex">
+                                <input type="text" placeholder="Enter Email"
+                                    class="border border-gray-300 px-2 py-2 text-base">
+                                <button
+                                    class="bg-red-500 px-4 py-3 text-white text-base uppercase inline-block">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <p class="pt-10 text-center text-gray-300 text-sm md:text-base">Copyright &copy;
+                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
+                with <span class="text-red-500"><i class="fa-solid fa-heart"></i></span> by <span
+                    class="text-gray-300">Mr.Arc</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- End of footer section -->
+
+</body>
+<script src="./assets/js/nav_indicator_onscroll.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script src="./assets/js/animation_on_scroll.js"></script>
+
+<script src="./assets/js/page_swiper.js"></script>
+
+</html>

@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/css/main.css" rel="stylesheet">
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="assets/images/airplane.png" type="image/png">
+
+    <!-- google font style (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Alphine js light weight js library -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Animate On Scroll -->
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Splide js -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+
+    <title>Hello world</title>
+</head>
+
+<body class="font-poppins">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0  inset-x-0 w-full z-[10000] p-6"
+        :class="{'bg-white -top-96  transition duration-300 transform translate-y-96 text-black shadow-lg': showBar}"
+        x-data="{ open: false, showBar: true  }" @scroll.window="showBar = (window.pageYOffset > 200) ? true : false">
+        <div class="container">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <h5 class="text-3xl text-white" :class="{'text-black' : showBar, 'text-white':!showBar}">Logo</h5>
+
+                <!-- Menu Items -->
+                <div class="hidden space-x-6 lg:flex text-white"
+                    :class="{'text-black' : showBar, 'text-white':!showBar}">
+                    <a href="/#home" class="nav-link hover:text-darkGrayishBlue">Home</a>
+                    <a href="/#about" class="nav-link hover:text-darkGrayishBlue">About Us</a>
+                    <a href="/#howItWorks" class="nav-link hover:text-darkGrayishBlue">How It Works</a>
+                    <a href="/#team" class="nav-link hover:text-darkGrayishBlue">Team</a>
+                    <a href="/#services" class="nav-link hover:text-darkGrayishBlue">Services</a>
+                    <a href="/#blog" class="nav-link hover:text-darkGrayishBlue">Blog</a>
+                    <a href="/#contact" class="nav-link hover:text-darkGrayishBlue">Contact</a>
+
+                </div>
+
+                <!-- Hamburger Icon -->
+                <span class="text-2xl block lg:hidden focus:outline-none text-white" @click="open = ! open"
+                    @click.away="open = false" :class="{'text-black' : showBar, 'text-white':!showBar}">
+                    <i class="fa-solid fa-bars" x-show="!open"></i>
+                    <i class="fa-solid fa-xmark" x-show="open"></i>
+                </span>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="lg:hidden">
+                <div id="menu"
+                    class="absolute flex-col items-center self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
+                    :class="open ? 'flex' : 'hidden'">
+                    <a href="/#home" class="nav-link hover:text-darkGrayishBlue">Home</a>
+                    <a href="/#about" class="nav-link hover:text-darkGrayishBlue">About Us</a>
+                    <a href="/#howItWorks" class="nav-link hover:text-darkGrayishBlue">How It Works</a>
+                    <a href="/#team" class="nav-link hover:text-darkGrayishBlue">Team</a>
+                    <a href="/#services" class="nav-link hover:text-darkGrayishBlue">Services</a>
+                    <a href="/#blog" class="nav-link hover:text-darkGrayishBlue">Blog</a>
+                    <a href="/#contact" class="nav-link hover:text-darkGrayishBlue">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- End of Navbar -->
+
+
+    <!-- Hero Section -->
+    <section style="background-image: url('assets/images/hero_bg_2.jpg.webp'); background-position: 50% -25px;"
+        class="h-[700px] lg:h-screen bg-cover bg-center relative mb-5 md:mb-12">
+
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+
+        <div class="container h-full flex flex-col justify-center items-center z-20 relative" data-aos="fade-up"
+            data-aos-delay="400">
+            <h1 class="uppercase text-3xl md:text-3xl lg:text-6xl font-bold text-white mb-3">We make shipping</h1>
+            <p class=" text-gray-200 mb-10 text-xl">A logistics company</p>
+
+            <a href="/track_order.html" class="bg-red-500 px-8 py-3 text-white text-base uppercase">Track</a>
+        </div>
+
+    </section>
+    <!-- End of Hero section -->
+
+
+    <!-- AboutUs Section -->
+    <section id="about" class="mb-5 md:mb-12">
+        <div class="container p-6">
+            <div class="flex flex-col md:flex-row-reverse space-y-10 md:space-y-0">
+                <div class="w-full md:w-[1200px] md:ml-14">
+                    <!-- image here -->
+                    <img src="./assets/images/img_3.jpg.webp" class="rounded-md" alt="">
+                </div>
+                <div class=" text-gray-500">
+                    <!-- Heading -->
+                    <div class="mb-6 flex flex-col space-y-1">
+                        <h2 class="text-3xl text-red-500 mb-2 uppercase">About Us</h2>
+                        <span class="block w-20 h-1 bg-red-500"></span>
+                    </div>
+
+                    <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti
+                        reprehenderit animi est eaque corporis! Nisi, asperiores nam amet doloribus, soluta ut
+                        reiciendis. Consequatur modi rem, vero eos ipsam voluptas.</p>
+                    <p class="mb-5 md:mb-8">Error minus sint nobis dolor laborum architecto, quaerat. Voluptatum porro
+                        expedita labore esse
+                        velit veniam laborum quo obcaecati similique iusto delectus quasi!</p>
+
+                    <ul class="flex flex-col space-y-3">
+                        <li class="flex">
+                            <span class=" text-green-500 mr-3"><i class="fa-solid fa-check"></i></span>
+                            <span>Error minus sint nobis dolor </span>
+                        </li>
+                        <li class="flex">
+                            <span class=" text-green-500 mr-3"><i class="fa-solid fa-check"></i></span>
+                            <span>Error minus sint nobis dolor</span>
+                        </li>
+                        <li class="flex">
+                            <span class=" text-green-500 mr-3"><i class="fa-solid fa-check"></i></span>
+                            <span>Error minus sint nobis dolor</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of About Us section -->
+
+
+    <!-- How it works section -->
+    <section id="howItWorks" style="background-image: url('assets/images/img_3.jpg.webp'); "
+        class="bg-fixed bg-cover bg-no-repeat py-10 md:py-12 relative">
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+        <div class="container p-6">
+
+            <div class="z-20 relative flex flex-col space-y-3">
+                <!-- Heading -->
+                <div class="mb-6 flex flex-col space-y-1 items-center">
+                    <h2 class="text-3xl text-red-500 mb-2 uppercase">How it works</h2>
+                    <span class="block w-20 h-1 bg-red-500"></span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 md:gap-x-10">
+                    <div class="flex flex-col text-white">
+                        <span
+                            class=" w-10 h-10 bg-red-500 border-2 border-white flex items-center justify-center text-white text-base rounded-full mb-5 md:mb-8">
+                            1
+                        </span>
+
+                        <h2 class="mb-4 md:mb-7 font-bold text-base md:text-lg">Make an Order</h2>
+
+                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur excepturi
+                            sed
+                            necessitatibus nesciunt minus illum molestiae odit explicabo ipsum nam.</p>
+                        <ul class="flex flex-col space-y-3">
+                            <li class="flex">
+                                <span class=" text-green-500 mr-3"><i class="fa-solid fa-check"></i></span>
+                                <span>Error minus sint nobis dolor </span>
+                            </li>
+                            <li class="flex">
+                                <span class=" text-green-500 mr-3"><i class="fa-solid fa-check"></i></span>
+                                <span>Error minus sint nobis dolor</span>
+                            </li>
+                            <li class="flex">
+                                <span class=" text-green-500 mr-3"><i class="fa-solid fa-check"></i></span>
+                                <span>Error minus sint nobis dolor</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="flex flex-col text-white">
+                        <span
+                            class=" w-10 h-10 bg-red-500 border-2 border-white flex items-center justify-center text-white text-base rounded-full mb-5 md:mb-8">
+                            2
+                        </span>
+
+                        <h2 class="mb-4 md:mb-7 font-bold text-base md:text-lg">Make a payment</h2>
+
+                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur excepturi
+                            sed
+                            necessitatibus nesciunt minus illum molestiae odit explicabo ipsum nam.</p>
+                        <ul class="flex flex-col space-y-3">
+                            <li class="flex">
+                                <span class=" text-green-500 mr-3"><i class="fa-solid fa-check"></i></span>
+                                <span>Error minus sint nobis dolor </span>
+                            </li>
+                            <li class="flex">
+                                <span class=" text-green-500 mr-3"><i class="fa-solid fa-check"></i></span>
+                                <span>Error minus sint nobis dolor</span>
+                            </li>
+                            <li class="flex">
+                                <span class=" text-green-500 mr-3"><i class="fa-solid fa-check"></i></span>
+                                <span>Error minus sint nobis dolor</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="flex flex-col text-white">
+                        <span
+                            class=" w-10 h-10 bg-red-500 border-2 border-white flex items-center justify-center text-white text-base rounded-full mb-5 md:mb-8">
+                            3
+                        </span>
+
+                        <h2 class="mb-4 md:mb-7 font-bold text-base md:text-lg">Track your order</h2>
+
+                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur excepturi
+                            sed
+                            necessitatibus nesciunt minus illum molestiae odit explicabo ipsum nam.</p>
+                        <ul class="flex flex-col space-y-3">
+                            <li class="flex">
+                                <span class=" text-green-500 mr-3"><i class="fa-solid fa-check"></i></span>
+                                <span>Error minus sint nobis dolor </span>
+                            </li>
+                            <li class="flex">
+                                <span class=" text-green-500 mr-3"><i class="fa-solid fa-check"></i></span>
+                                <span>Error minus sint nobis dolor</span>
+                            </li>
+                            <li class="flex">
+                                <span class=" text-green-500 mr-3"><i class="fa-solid fa-check"></i></span>
+                                <span>Error minus sint nobis dolor</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End of Hot it works section -->
+
+
+    <!-- Our team section -->
+    <section id="team" class="py-10 md:py-12">
+        <div class="container p-6">
+
+            <div class="z-20 relative flex flex-col space-y-3">
+                <!-- Heading -->
+                <div class="mb-6 flex flex-col space-y-1 items-center">
+                    <h2 class="text-3xl text-red-500 mb-2 uppercase">Our team</h2>
+                    <span class="block w-20 h-1 bg-red-500"></span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 md:gap-x-10">
+                    <div class="flex flex-col items-center">
+                        <div
+                            class=" w-40 h-40 md:w-44 md:h-44 bg-red-500 border-2 border-white flex items-center justify-center text-white text-base rounded-full mb-3 md:mb-5 overflow-hidden">
+
+                            <img src="./assets/images/person_1.jpg.webp" alt="">
+
+                        </div>
+
+                        <h2 class="mb-1 md:mb-2 font-bold text-base md:text-lg">Christine Rooster</h2>
+                        <h5 class="text-gray-400 mb-4 font-thin text-xs md:text-sm">Co-founder, president</h5>
+
+                        <p class="mb-4 font-light text-center text-base md:text-lg">Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Consequatur excepturi
+                            sed
+                            necessitatibus nesciunt minus illum molestiae odit explicabo ipsum nam.</p>
+                        <div class="flex space-x-2">
+                            <span
+                                class="flex items-center justify-center bg-gray-700 text-white w-6 h-6 text-sm rounded-full">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </span>
+                            <span
+                                class="flex items-center justify-center bg-gray-700 text-white w-6 h-6 text-sm rounded-full">
+                                <i class="fa-brands fa-twitter"></i>
+                            </span>
+                            <span
+                                class="flex items-center justify-center bg-gray-700 text-white w-6 h-6 text-sm rounded-full">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </span>
+                            <span
+                                class="flex items-center justify-center bg-gray-700 text-white w-6 h-6 text-sm rounded-full">
+                                <i class="fa-brands fa-instagram"></i>
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div
+                            class=" w-40 h-40 md:w-44 md:h-44 bg-red-500 border-2 border-white flex items-center justify-center text-white text-base rounded-full mb-3 md:mb-5 overflow-hidden">
+
+                            <img src="./assets/images/person_1.jpg.webp" alt="">
+
+                        </div>
+
+                        <h2 class="mb-1 md:mb-2 font-bold text-base md:text-lg">Christine Rooster</h2>
+                        <h5 class="text-gray-400 mb-4 font-thin text-xs md:text-sm">Co-founder, president</h5>
+
+                        <p class="mb-4 font-light text-center text-base md:text-lg">Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Consequatur excepturi
+                            sed
+                            necessitatibus nesciunt minus illum molestiae odit explicabo ipsum nam.</p>
+                        <div class="flex space-x-2">
+                            <span
+                                class="flex items-center justify-center bg-gray-700 text-white w-6 h-6 text-sm rounded-full">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </span>
+                            <span
+                                class="flex items-center justify-center bg-gray-700 text-white w-6 h-6 text-sm rounded-full">
+                                <i class="fa-brands fa-twitter"></i>
+                            </span>
+                            <span
+                                class="flex items-center justify-center bg-gray-700 text-white w-6 h-6 text-sm rounded-full">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </span>
+                            <span
+                                class="flex items-center justify-center bg-gray-700 text-white w-6 h-6 text-sm rounded-full">
+                                <i class="fa-brands fa-instagram"></i>
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div
+                            class=" w-40 h-40 md:w-44 md:h-44 bg-red-500 border-2 border-white flex items-center justify-center text-white text-base rounded-full mb-3 md:mb-5 overflow-hidden">
+
+                            <img src="./assets/images/person_1.jpg.webp" alt="">
+
+                        </div>
+
+                        <h2 class="mb-1 md:mb-2 font-bold text-base md:text-lg">Christine Rooster</h2>
+                        <h5 class="text-gray-400 mb-4 font-thin text-xs md:text-sm">Co-founder, president</h5>
+
+                        <p class="mb-4 font-light text-center text-base md:text-lg">Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Consequatur excepturi
+                            sed
+                            necessitatibus nesciunt minus illum molestiae odit explicabo ipsum nam.</p>
+                        <div class="flex space-x-2">
+                            <span
+                                class="flex items-center justify-center bg-gray-700 text-white w-6 h-6 text-sm rounded-full">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </span>
+                            <span
+                                class="flex items-center justify-center bg-gray-700 text-white w-6 h-6 text-sm rounded-full">
+                                <i class="fa-brands fa-twitter"></i>
+                            </span>
+                            <span
+                                class="flex items-center justify-center bg-gray-700 text-white w-6 h-6 text-sm rounded-full">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </span>
+                            <span
+                                class="flex items-center justify-center bg-gray-700 text-white w-6 h-6 text-sm rounded-full">
+                                <i class="fa-brands fa-instagram"></i>
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End of our team section -->
+
+
+    <!-- Our services section -->
+    <section id="services" class="py-10 md:py-12 bg-gray-100">
+        <div class="container p-6">
+
+            <div class="z-20 relative flex flex-col space-y-3">
+                <!-- Heading -->
+                <div class="mb-6 flex flex-col space-y-1 items-center">
+                    <h2 class="text-3xl text-red-500 mb-2 uppercase">Our services</h2>
+                    <span class="block w-20 h-1 bg-red-500"></span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 md:gap-x-10">
+                    <div class="flex space-x-3">
+                        <div class=" mr-3">
+                            <img src="./assets/images/airplane.png" class="w-60" alt="">
+                        </div>
+
+                        <div class="flex flex-col">
+                            <h3 class="mb-3 font-bold text-xl">Air Freight</h3>
+                            <p class="mb-4 font-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
+                                aut.
+                                consectetur adipisicing elit. Quasi, aut</p>
+
+                            <a href="" class="text-lg text-red-500">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-3">
+                        <div class=" mr-3">
+                            <img src="./assets/images/ship.png" class="w-60" alt="">
+                        </div>
+
+                        <div class="flex flex-col">
+                            <h3 class="mb-3 font-bold text-xl">Ocean Freight</h3>
+                            <p class="mb-4 font-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
+                                aut.
+                                consectetur adipisicing elit. Quasi, aut</p>
+
+                            <a href="" class="text-lg text-red-500">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-3">
+                        <div class=" mr-3">
+                            <img src="./assets/images/delivery-truck.png" class="w-60" alt="">
+                        </div>
+
+                        <div class="flex flex-col">
+                            <h3 class="mb-3 font-bold text-xl">Land transport</h3>
+                            <p class="mb-4 font-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
+                                aut.
+                                consectetur adipisicing elit. Quasi, aut</p>
+
+                            <a href="" class="text-lg text-red-500">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-3">
+                        <div class=" mr-3">
+                            <img src="./assets/images/warehouse.png" class="w-40" alt="">
+                        </div>
+
+                        <div class="flex flex-col">
+                            <h3 class="mb-3 font-bold text-lg">Warehousing</h3>
+                            <p class="mb-4 font-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
+                                aut.
+                                consectetur adipisicing elit. Quasi, aut</p>
+
+                            <a href="" class="text-lg text-red-500">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-3">
+                        <div class=" mr-3">
+                            <img src="./assets/images/distribution.png" class="w-40" alt="">
+                        </div>
+
+                        <div class="flex flex-col">
+                            <h3 class="mb-3 font-bold text-lg">Worldwide Delivery</h3>
+                            <p class="mb-4 font-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
+                                aut.
+                                consectetur adipisicing elit. Quasi, aut</p>
+
+                            <a href="" class="text-lg text-red-500">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End of our services section -->
+
+    <!-- Testimonials section -->
+    <section class="py-10 md:py-12">
+        <div class="container p-6">
+
+            <div class="z-20 relative flex flex-col space-y-3">
+                <!-- Heading -->
+                <div class="mb-6 flex flex-col space-y-1 items-center">
+                    <h2 class="text-3xl text-red-500 mb-2 uppercase">Testimonials</h2>
+                    <span class="block w-20 h-1 bg-red-500"></span>
+                </div>
+
+                <div>
+                    <div class="splide" role="group" aria-label="Splide Basic HTML Example">
+                        <div class="splide__track">
+                            <div class="splide__list">
+
+                                <div class="splide__slide">
+                                    <div class="flex flex-col items-center">
+                                        <div
+                                            class=" w-40 h-40 md:w-44 md:h-44 bg-red-500 border-2 border-white flex items-center justify-center text-white text-base rounded-full mb-3 md:mb-5 overflow-hidden">
+
+                                            <img src="./assets/images/person_1.jpg.webp"
+                                                class="w-full h-full object-cover" alt="">
+
+                                        </div>
+
+                                        <p class="mb-4 font-light text-center text-base md:text-lg italic">"Lorem ipsum
+                                            dolor
+                                            sit amet
+                                            consectetur adipisicing elit. Consequatur excepturi
+                                            sed
+                                            necessitatibus nesciunt minus illum molestiae odit explicabo ipsum nam."</p>
+
+                                        <h6>- Christine Rooster</h6>
+                                    </div>
+                                </div>
+                                <div class="splide__slide">
+                                    <div class="flex flex-col items-center">
+                                        <div
+                                            class=" w-40 h-40 md:w-44 md:h-44 bg-red-500 border-2 border-white flex items-center justify-center text-white text-base rounded-full mb-3 md:mb-5 overflow-hidden">
+
+                                            <img src="./assets/images/hero_bg_2.jpg.webp"
+                                                class="w-full h-full object-cover" alt="">
+
+                                        </div>
+
+                                        <p class="mb-4 font-light text-center text-base md:text-lg italic">"Lorem ipsum
+                                            dolor
+                                            sit amet
+                                            consectetur adipisicing elit. Consequatur excepturi
+                                            sed
+                                            necessitatibus nesciunt minus illum molestiae odit explicabo ipsum nam."</p>
+
+                                        <h6>- Christine Rooster</h6>
+                                    </div>
+                                </div>
+                                <div class="splide__slide">
+                                    <div class="flex flex-col items-center">
+                                        <div
+                                            class=" w-40 h-40 md:w-44 md:h-44 bg-red-500 border-2 border-white flex items-center justify-center text-white text-base rounded-full mb-3 md:mb-5 overflow-hidden">
+
+                                            <img src="./assets/images/person_1.jpg.webp"
+                                                class="w-full h-full object-cover" alt="">
+
+                                        </div>
+
+                                        <p class="mb-4 font-light text-center text-base md:text-lg italic">"Lorem ipsum
+                                            dolor
+                                            sit amet
+                                            consectetur adipisicing elit. Consequatur excepturi
+                                            sed
+                                            necessitatibus nesciunt minus illum molestiae odit explicabo ipsum nam."</p>
+
+                                        <h6>- Christine Rooster</h6>
+                                    </div>
+                                </div>
+                                <div class="splide__slide">
+                                    <div class="flex flex-col items-center">
+                                        <div
+                                            class=" w-40 h-40 md:w-44 md:h-44 bg-red-500 border-2 border-white flex items-center justify-center text-white text-base rounded-full mb-3 md:mb-5 overflow-hidden">
+
+                                            <img src="./assets/images/person_1.jpg.webp"
+                                                class="w-full h-full object-cover" alt="">
+
+                                        </div>
+
+                                        <p class="mb-4 font-light text-center text-base md:text-lg italic">"Lorem ipsum
+                                            dolor
+                                            sit amet
+                                            consectetur adipisicing elit. Consequatur excepturi
+                                            sed
+                                            necessitatibus nesciunt minus illum molestiae odit explicabo ipsum nam."</p>
+
+                                        <h6>- Christine Rooster</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+    </section>
+    <!-- End of Testimonials section -->
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-10 md:py-12 border-t border-gray-300">
+        <div class="container p-6">
+
+            <div class="z-20 relative flex flex-col space-y-3">
+                <!-- Heading -->
+                <div class="mb-6 flex flex-col space-y-1 items-center">
+                    <h2 class="text-3xl text-red-500 mb-2 uppercase">Our Blog</h2>
+                    <span class="block w-20 h-1 bg-red-500"></span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 md:gap-x-10">
+                    <div class="flex flex-col">
+                        <div
+                            class="h-48 md:h-56 lg:h-64 w-full bg-red-500 border-2 border-white flex items-center justify-center text-white text-base mb-3 md:mb-5 overflow-hidden">
+
+                            <img src="./assets/images/person_1.jpg.webp" class="object-cover w-full h-full" alt="">
+
+                        </div>
+                        <a href="./single_post.html" class="text-red-500 text-lg md:text-xl mb-1">How Logistics Company
+                            Improve
+                            Spendings</a>
+                        <div class="flex items-center space-x-3  mb-2 md:mb-4 md:text-sm font-light text-gray-300">
+                            <span>by Jed Wilson</span> <span class="text-[5px]"><i
+                                    class="fa-solid fa-circle"></i></span> <span>Jan 18, 2019</span>
+                        </div>
+
+                        <p class="mb-4 font-light  text-sm md:text-base">Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Consequatur excepturi
+                            sed
+                            minus illum molestiae odit explicabo ipsum nam.</p>
+
+                    </div>
+
+                    <div class="flex flex-col">
+                        <div
+                            class="h-48 md:h-56 lg:h-64 w-full bg-red-500 border-2 border-white flex items-center justify-center text-white text-base mb-3 md:mb-5 overflow-hidden">
+
+                            <img src="./assets/images/hero_bg_2.jpg.webp" class="object-cover w-full h-full" alt="">
+
+                        </div>
+                        <a href="#" class="text-red-500 text-lg md:text-xl mb-1">How Logistics Company Improve
+                            Spendings</a>
+                        <div class="flex items-center space-x-3  mb-2 md:mb-4 md:text-sm font-light text-gray-300">
+                            <span>by Jed Wilson</span> <span class="text-[5px]"><i
+                                    class="fa-solid fa-circle"></i></span> <span>Jan 18, 2019</span>
+                        </div>
+
+                        <p class="mb-4 font-light  text-sm md:text-base">Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Consequatur excepturi
+                            sed
+                            minus illum molestiae odit explicabo ipsum nam.</p>
+
+                    </div>
+                    <div class="flex flex-col">
+                        <div
+                            class="h-48 md:h-56 lg:h-64 w-full bg-red-500 border-2 border-white flex items-center justify-center text-white text-base mb-3 md:mb-5 overflow-hidden">
+
+                            <img src="./assets/images/person_1.jpg.webp" class="object-cover w-full h-full" alt="">
+
+                        </div>
+                        <a href="#" class="text-red-500 text-lg md:text-xl mb-1">How Logistics Company Improve
+                            Spendings</a>
+                        <div class="flex items-center space-x-3  mb-2 md:mb-4 md:text-sm font-light text-gray-300">
+                            <span>by Jed Wilson</span> <span class="text-[5px]"><i
+                                    class="fa-solid fa-circle"></i></span> <span>Jan 18, 2019</span>
+                        </div>
+
+                        <p class="mb-4 font-light  text-sm md:text-base">Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Consequatur excepturi
+                            sed
+                            minus illum molestiae odit explicabo ipsum nam.</p>
+
+                    </div>
+                </div>
+
+                <div class="mt-40 flex items-center justify-center">
+                    <a href="#" class="bg-red-500 px-8 py-3 text-white text-base uppercase inline-block">View All Blog
+                        Posts</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End of Blog Section -->
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-10 md:py-12 bg-gray-100">
+        <div class="container p-6">
+
+            <div class="z-20 relative flex flex-col space-y-3">
+                <!-- Heading -->
+                <div class="mb-6 flex flex-col space-y-1 items-center">
+                    <h2 class="text-3xl text-red-500 mb-2 uppercase">Contact Us</h2>
+                    <span class="block w-20 h-1 bg-red-500"></span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                    <div class="bg-white px-4 py-6">
+                        <form>
+                            <div class="grid grid-cols-1 gap-y-4">
+                                <div class="flex flex-col">
+                                    <h6 class="mb-1">First Name</h6>
+                                    <input type="text" class="border border-gray-300 px-3 py-2 text-base">
+                                </div>
+
+                                <div class="flex flex-col">
+                                    <h6 class="mb-1">Last Name</h6>
+                                    <input type="text" class="border border-gray-300 px-3 py-2 text-base">
+                                </div>
+                                <div class="flex flex-col">
+                                    <h6 class="mb-1">Email</h6>
+                                    <input type="email" class="border border-gray-300 px-3 py-2 text-base">
+                                </div>
+                                <div class="flex flex-col">
+                                    <h6 class="mb-1">Subject</h6>
+                                    <input type="text" class="border border-gray-300 px-3 py-2 text-base">
+                                </div>
+
+                                <div class="flex flex-col">
+                                    <h6 class="mb-1">Message</h6>
+                                    <textarea name="" id="" cols="30" rows="5"
+                                        class="border border-gray-300 px-3 py-2 text-base"></textarea></textarea>
+                                </div>
+
+                                <div class="flex justify-center">
+                                    <button class="bg-red-500 px-8 py-3 text-white text-base uppercase">Send
+                                        Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="self-start grid grid-cols-1 gap-y-5">
+                        <div class=" px-4 py-6 flex flex-col bg-white">
+                            <form>
+                                <div class="grid grid-cols-1 gap-y-4">
+                                    <div class="flex flex-col space-y-2">
+                                        <h4 class="font-bold text-base md:text-lg">Address</h4>
+                                        <p class="font-light text-sm md:text-base">Lorem ipsum dolor sit amet
+                                            consectetur adipisicing elit. Vel, nihil.</p>
+                                    </div>
+
+                                    <div class="flex flex-col space-y-2">
+                                        <h4 class="font-bold text-base md:text-lg">Phone</h4>
+                                        <p class="font-light text-sm md:text-base text-red-500">+1 234 3456 324</p>
+                                    </div>
+
+                                    <div class="flex flex-col space-y-2">
+                                        <h4 class="font-bold text-base md:text-lg">Email Address</h4>
+                                        <p class="font-light text-sm md:text-base text-red-500">youremail@domain.com</p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class=" px-4 py-6 bg-white">
+
+
+                            <div class="flex flex-col space-y-2">
+                                <h4 class="font-medium text-base md:text-lg">More Info</h4>
+                                <p class="font-light text-sm md:text-base ">Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Vel, nihil. Lorem ipsum dolor sit amet, consectetur adipisicing
+                                    elit. Officia, distinctio! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Pariatur cupiditate reprehenderit dolore soluta eaque ab veritatis magni quisquam,
+                                    libero vitae, ipsa sapiente nisi, quasi cumque inventore ea voluptates sequi quas.
+                                </p>
+
+                                <div class="mt-5">
+                                    <a class="bg-red-500 px-8 py-3 text-white text-base uppercase inline-block">Learn
+                                        More</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End of Contact Section -->
+
+
+    <!-- Footer section -->
+    <footer class="py-10 md:py-20 bg-gray-500">
+        <div class="container p-6">
+            <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 pb-10 border-b border-gray-300">
+
+                <div class="w-full md:w-4/12 flex flex-col space-y-4">
+                    <h4 class="text-bold text-white text-lg">About</h4>
+                    <p class="text-gray-300 font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Provident suscipit id rerum possimus
+                        nostrum magnam eum animi. Alias aperiam perferendis possimus architecto similique! Voluptatibus,
+                        soluta. Accusamus vero totam, animi dolore nobis veniam nesciunt maiores optio et repellat,
+                        aliquam reiciendis iste.</p>
+                </div>
+
+                <div class="w-full md:w-8/12 flex flex-col md:flex-row space-y-4 md:space-y-0 justify-end">
+                    <div class="flex flex-col space-y-4 md:mr-16 lg:mr-32">
+                        <h4 class="text-bold text-white text-lg">Quick Links</h4>
+                        <div class="flex flex-col space-y-3">
+                            <a href="" class="text-gray-300 text-base hover:underline transition-all">About Us</a>
+                            <a href="" class="text-gray-300 text-base">Services</a>
+
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col space-y-5">
+                        <div class="flex flex-col space-y-4">
+                            <h4 class="text-bold text-white text-lg">Follow Us</h4>
+                            <div class="flex space-x-4 text-gray-300 text-lg">
+                                <a href="">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col space-y-4">
+                            <h4 class="text-bold text-white text-lg">Subscribe Newsletter</h4>
+                            <div class="flex">
+                                <input type="text" placeholder="Enter Email"
+                                    class="border border-gray-300 px-2 py-2 text-base">
+                                <button
+                                    class="bg-red-500 px-4 py-3 text-white text-base uppercase inline-block">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <p class="pt-10 text-center text-gray-300 text-sm md:text-base">Copyright &copy;
+                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
+                with <span class="text-red-500"><i class="fa-solid fa-heart"></i></span> by <span
+                    class="text-gray-300">Mr.Arc</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- End of footer section -->
+
+</body>
+<script src="./assets/js/nav_indicator_onscroll.js"></script>
+<script src="./assets/js/animation_on_scroll.js"></script>
+<script src="./assets/js/page_splides.js"></script>
+
+<script src="./assets/js/page_swiper.js"></script>
+
+</html>
